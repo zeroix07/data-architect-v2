@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand: #3b82f6;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-surface: #0b0e14;
+  --color-surface-brighter: #0f1219;
+  --color-surface-card: #1a1f29;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-gray-300 font-sans antialiased overflow-hidden;
+  }
+}
+
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Custom styles for ReactFlow to match the theme */
+.react-flow__background {
+  @apply opacity-[0.03];
+}
+
+.react-flow__node {
+  @apply shadow-none !border-0;
+}
+
+.react-flow__handle {
+  @apply w-2 h-2 !bg-brand !border-0;
+}
+
+.react-flow__edge-path {
+  @apply stroke-2;
+}
+
+.react-flow__controls {
+  @apply !bg-surface-brighter !border-white/10 !shadow-2xl;
+}
+
+.react-flow__controls-button {
+  @apply !bg-transparent !border-b !border-white/5 last:!border-b-0 hover:!bg-white/5 transition-colors;
+}
+
+.react-flow__controls-button svg {
+  @apply !fill-gray-400;
+}

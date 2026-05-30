@@ -1,0 +1,8 @@
+{
+  "name": "Ultimate Data Architecture IDE",
+  "description": "A professional IDE for building and generating data infrastructure architectures visually.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
