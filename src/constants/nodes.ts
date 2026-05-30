@@ -1,35 +1,22 @@
-import { 
-  Cloud, 
-  Database, 
-  Cpu, 
-  Server, 
-  HardDrive, 
-  Box, 
-  Layers, 
-  Workflow, 
+import {
+  Database,
+  Cpu,
+  Server,
+  HardDrive,
+  Box,
+  Layers,
+  Workflow,
   Terminal,
   Activity,
   Globe,
-  Lock,
   BarChart3,
   Eye,
   ShieldCheck,
   Zap,
   Sparkles,
-  Search
+  Search,
 } from 'lucide-react';
-import React from 'react';
-
-export type NodeType = 'cloud' | 'on-premise' | 'open-source' | 'boundary';
-
-export interface NodeTemplate {
-  id: string;
-  name: string;
-  type: NodeType;
-  icon: React.ElementType;
-  category: string;
-  description: string;
-}
+import type { NodeTemplate } from '@/types';
 
 export const NODE_TEMPLATES: NodeTemplate[] = [
   // Google Cloud Platform
@@ -71,14 +58,14 @@ export const NODE_TEMPLATES: NodeTemplate[] = [
   { id: 'ten-cos', name: 'COS', type: 'cloud', icon: HardDrive, category: 'Tencent Cloud', description: 'Object storage' },
   { id: 'ten-cvm', name: 'CVM', type: 'cloud', icon: Cpu, category: 'Tencent Cloud', description: 'Virtual cloud servers' },
   { id: 'ten-cdb', name: 'CDB', type: 'cloud', icon: Database, category: 'Tencent Cloud', description: 'Relational database' },
-  
+
   // Databases
   { id: 'db-mysql', name: 'MySQL', type: 'on-premise', icon: Database, category: 'Databases', description: 'Open-source relational database' },
   { id: 'db-postgres', name: 'PostgreSQL', type: 'on-premise', icon: Database, category: 'Databases', description: 'Advanced relational database' },
   { id: 'db-clickhouse', name: 'ClickHouse', type: 'open-source', icon: BarChart3, category: 'Databases', description: 'Columnar OLAP database' },
   { id: 'db-mongodb', name: 'MongoDB', type: 'on-premise', icon: Database, category: 'Databases', description: 'NoSQL document database' },
   { id: 'db-redis', name: 'Redis', type: 'open-source', icon: Activity, category: 'Databases', description: 'In-memory data store' },
-  
+
   // On-Premise
   { id: 'bare-metal', name: 'Bare Metal', type: 'on-premise', icon: Server, category: 'On-Premise', description: 'Physical server hardware' },
   { id: 'hdfs', name: 'Hadoop/HDFS', type: 'on-premise', icon: Box, category: 'On-Premise', description: 'Distributed file system' },
@@ -104,3 +91,7 @@ export const NODE_TEMPLATES: NodeTemplate[] = [
   { id: 'vpc-zone', name: 'VPC Zone', type: 'boundary', icon: Box, category: 'Network Boundaries', description: 'Isolated virtual network zone' },
   { id: 'region-box', name: 'Region Box', type: 'boundary', icon: Globe, category: 'Network Boundaries', description: 'Geographical region zone' },
 ];
+
+export const CLOUD_PROVIDERS = ['Google Cloud Platform', 'AWS', 'Microsoft Azure', 'Alibaba Cloud', 'Tencent Cloud'];
+export const ON_PREM_CATEGORIES = ['On-Premise', 'Databases', 'Edge AI & Audit'];
+export const OPEN_SOURCE_CATEGORIES = ['Open-Source Stack'];

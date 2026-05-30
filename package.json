@@ -1,40 +1,37 @@
 {
-  "name": "react-example",
-  "private": true,
+  "name": "data-architect-v2",
   "version": "0.0.0",
-  "type": "module",
+  "private": true,
   "scripts": {
-    "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build",
-    "preview": "vite preview",
-    "clean": "rm -rf dist server.js",
-    "lint": "tsc --noEmit"
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "tsc --noEmit",
+    "remotion": "npx remotion studio remotion/index.ts",
+    "remotion:render": "npx remotion render remotion/index.ts DataArchitectDemo out/demo.mp4"
   },
   "dependencies": {
-    "@google/genai": "^1.29.0",
     "@reactflow/core": "^11.11.4",
-    "@tailwindcss/vite": "^4.1.14",
-    "@vitejs/plugin-react": "^5.0.4",
+    "@remotion/cli": "^4.0.469",
+    "@remotion/tailwind-v4": "^4.0.469",
     "clsx": "^2.1.1",
-    "dotenv": "^17.2.3",
-    "express": "^4.21.2",
-    "framer-motion": "^12.39.0",
+    "html-to-image": "^1.11.13",
     "lucide-react": "^0.546.0",
     "motion": "^12.23.24",
+    "next": "^15.3.3",
     "react": "^19.0.1",
     "react-dom": "^19.0.1",
     "reactflow": "^11.11.4",
-    "tailwind-merge": "^3.6.0",
-    "vite": "^6.2.3"
+    "remotion": "^4.0.469",
+    "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
-    "@types/express": "^4.17.21",
+    "@tailwindcss/postcss": "^4.1.14",
     "@types/node": "^22.14.0",
-    "autoprefixer": "^10.4.21",
-    "esbuild": "^0.25.0",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "postcss": "^8.5.4",
     "tailwindcss": "^4.1.14",
-    "tsx": "^4.21.0",
-    "typescript": "~5.8.2",
-    "vite": "^6.2.3"
+    "typescript": "~5.8.2"
   }
 }
